@@ -32,13 +32,14 @@ public class RegistrationController {
     }
 
     @PostMapping
-    public String register(@ModelAttribute Registration registration) {
+    public String register(@ModelAttribute Registration registration, Model model) {
         try {
             logger.info("Registering user: {}", registration.getWorkEmail());
             logger.debug("Registration details: Full Name: {}, Work Email: {}, Phone Number: {}",
                     registration.getFullName(), registration.getWorkEmail(), registration.getPhoneNumber());
             redisTemplate.opsForValue().set(registration.getWorkEmail(), registration);
-            return "redirect:/api/registration";
+            model.addAttribute("registration", registration);
+            return "registration-success";
         } catch (Exception e) {
             logger.error("Error registering user: {}", e.getMessage(), e);
             return "error";
