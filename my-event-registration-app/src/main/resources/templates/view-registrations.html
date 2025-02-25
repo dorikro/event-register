@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Registrations</title>
+</head>
+<body>
+    <h1>Registrations</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Full Name</th>
+                <th>Work Email</th>
+                <th>Phone Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="registration : ${registrations}">
+                <td th:text="${registration.fullName}"></td>
+                <td th:text="${registration.workEmail}"></td>
+                <td th:text="${registration.phoneNumber}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

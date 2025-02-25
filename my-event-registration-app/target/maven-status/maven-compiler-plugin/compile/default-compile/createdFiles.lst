@@ -1,0 +1,5 @@
+com\example\eventregistration\controller\RegistrationController.class
+com\example\eventregistration\service\RegistrationService.class
+com\example\eventregistration\Application.class
+com\example\eventregistration\model\Registration.class
+com\example\eventregistration\config\RedisConfig.class
